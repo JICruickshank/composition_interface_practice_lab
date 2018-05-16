@@ -39,7 +39,8 @@ public class Computer {
     }
 
     public String receiveInputData() {
-        return "Receiving Data : " + this.inputDevice.sendData();
+        dataStream = inputDevice.sendData();
+        return "Receiving Data : " + inputDevice.sendData();
     }
 
     public String getDataStream() {
@@ -47,7 +48,6 @@ public class Computer {
     }
 
     public String outputStreamedData() {
-        String data = inputDevice.sendData();
-        return outputDevice.outputData(data);
+        return outputData(dataStream);
     }
 }
